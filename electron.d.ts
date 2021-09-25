@@ -10632,9 +10632,10 @@ declare namespace Electron {
     /**
      * The identifier of a WebContents stream. This identifier can be used with
      * `navigator.mediaDevices.getUserMedia` using a `chromeMediaSource` of `tab`. The
-     * identifier is only valid for 10 seconds.
+     * identifier is restricted to the web contents that it is registered to and is
+     * only valid for 10 seconds.
      */
-    getMediaSourceId(): string;
+    getMediaSourceId(requestWebContents: WebContents): string;
     /**
      * The operating system `pid` of the associated renderer process.
      */
